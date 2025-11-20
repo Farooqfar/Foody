@@ -6,7 +6,7 @@ export default function page() {
     <>
       <main className="w-full h-screen  p-5">
         <Navbar />
-        <section className="w-full h-full flex bg-linear-to-tr to-black from-gray-800">
+        <section className="w-full h-full flex bg-linear-to-tl to-black from-gray-800">
           <div className="w-[50%] h-full  flex flex-col justify-center gap-10">
             <h1 className="text-white">Premium Restaurant</h1>
             <h1 className="text-white font-bold text-9xl">
@@ -17,7 +17,7 @@ export default function page() {
             <p className="text-white">
               best healthy salad served in our Restaurant
             </p>
-            <button className="w-28 p-2 bg-amber-600 text-white ">
+            <button className="w-28 p-2 bg-green-600 text-white hover:bg-green-600 transition-all duration-200  cursor-pointer hover:scale-105">
               Learn More
             </button>
           </div>
