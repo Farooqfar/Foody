@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Link from "next/link";
+import Cards from "./components/Cards";
 
 export default function page() {
   return (
@@ -18,7 +19,7 @@ export default function page() {
             <p className="text-white">
               best healthy salad served in our Restaurant
             </p>
-            <button className="w-28 p-2 bg-green-600 text-white hover:bg-green-600 transition-all duration-200  cursor-pointer hover:scale-105">
+            <button className="w-28 p-2 bg-amber-500 text-white hover:bg-amber-500 transition-all duration-200  cursor-pointer hover:scale-105">
               Learn More
             </button>
           </div>
@@ -49,7 +50,7 @@ export default function page() {
                   Rich in Vitamin C to boost immunity and keep you energized
                   every day
                 </p>
-                <Link href="#" className="w-28 bg-green-600 p-2">
+                <Link href="#" className="w-28 bg-amber-500 p-2">
                   Learn More
                 </Link>
               </div>
@@ -64,6 +65,14 @@ export default function page() {
               className="w-100"
             />
           </div>
+        </section>
+        <section className="w-full flex justify-center items-center gap-3 flex-wrap mt-5">
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
+          <Cards />
         </section>
       </main>
     </>
