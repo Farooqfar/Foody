@@ -6,7 +6,7 @@ import { FaCartPlus } from "react-icons/fa";
 export default function Navbar() {
   return (
     <>
-      <nav className="w-full flex justify-between items-center">
+      <nav className="w-full flex justify-between items-center p-5">
         <ul>logo</ul>
         <ul className="flex justify-center items-center gap-10">
           <li className="relative text-md uppercase hover:text-green-500 before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-green-500 before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
