@@ -25,10 +25,10 @@ export default function page() {
           </div>
           <div className="w-[50%] flex justify-center items-center">
             <Image
-              src="/salads.png"
+              src="/pizaa.png"
               width={100}
               height={100}
-              className="w-[97%]"
+              className="w-[80%]"
             />
           </div>
         </section>
@@ -38,7 +38,7 @@ export default function page() {
             <div className="flex gap-8">
               <div>
                 <Image
-                  src="/orange.png"
+                  src="/p3.png"
                   alt="orange"
                   width={100}
                   height={100}
@@ -58,7 +58,7 @@ export default function page() {
           </div>
           <div className="w-[50%] h-full flex justify-center items-center">
             <Image
-              src="/orange1.png"
+              src="/p2.png"
               alt="orange"
               width={100}
               height={100}
