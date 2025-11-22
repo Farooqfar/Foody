@@ -17,11 +17,11 @@ export default function Cards() {
         </div>
         <div className="w-full h-auto">
           <h1 className="text-3xl">Orange</h1>
-          <p className="text-amber-500">2999 PKR</p>
+          <p className="text-[#E1380A]">2999 PKR</p>
         </div>
         <Link
           href="#"
-          className="block w-full text-center rounded p-1 bg-amber-500 mt-3"
+          className="block w-full text-center rounded p-1 bg-[#E1380A] mt-3"
         >
           Order Now
         </Link>
