@@ -24,7 +24,7 @@ export default function Navbar() {
         </ul>
         <ul className="flex gap-2">
           <li className="text-2xl hover:text-[#E1380A] transition-all duration-300">
-            <Link href="#">
+            <Link href="/auth/login">
               <RiAccountBoxFill />
             </Link>
           </li>

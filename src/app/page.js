@@ -12,12 +12,13 @@ export default function page() {
           <div className="w-[50%] h-full  flex flex-col justify-center gap-10">
             <h1 className="text-white">Premium Restaurant</h1>
             <h1 className="text-white font-bold text-9xl">
-              Anida <br />
-              Dedelay
+              Dedelay&apos;s
+              <br />
+              Oven
             </h1>
 
             <p className="text-white">
-              best healthy salad served in our Restaurant
+              Best hot and fresh pizzas served in our restaurant.
             </p>
             <button className="w-28 p-2 bg-[#E1380A] text-white hover:bg-[#E1380A] transition-all duration-200  cursor-pointer hover:scale-105">
               Learn More
@@ -74,6 +75,47 @@ export default function page() {
           <Cards />
           <Cards />
         </section>
+        <section className="w-full flex justify-center items-center gap-3 flex-wrap mt-5">
+          <h1 className="text-6xl uppercase text-[#E1380A] font-bold">
+            Offers
+          </h1>
+          <div className="w-full flex justify-center items-center gap-3 flex-wrap">
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+          </div>
+        </section>
+        <footer className="w-full bg-gray-800 flex justify-around items-center p-5">
+          <div className="w-80 flex flex-col gap-1">
+            <h1 className="text-[#E1380A]">Dedelay's Oven</h1>
+            <p className="text-md text-gray-500">
+              From our oven to your plate, Dedelay's Oven delivers flavor,
+              freshness, and a love for pizza in every bite. Experience the
+              perfect slice, crafted just for you.
+            </p>
+          </div>
+          <div className="w-100">
+            <h1 className="text-[#E1380A]">Menu</h1>
+            <div className="text-gray-500 text-md flex flex-col w-full gap-1">
+              <Link href="#">Home</Link>
+              <Link href="#">Menu</Link>
+              <Link href="#">Blog</Link>
+              <Link href="#">Contact Us</Link>
+            </div>
+          </div>
+          <div>
+            <h1 className="text-[#E1380A]">Customer Support</h1>
+            <div className="text-gray-500 text-md flex flex-col w-full gap-1">
+              <Link href="#">Privacy Policey</Link>
+              <Link href="#">Contactus</Link>
+              <Link href="#">Shipping</Link>
+              <Link href="#">About Us</Link>
+            </div>
+          </div>
+        </footer>
       </main>
     </>
   );
