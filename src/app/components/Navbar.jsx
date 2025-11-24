@@ -28,8 +28,11 @@ export default function Navbar({ addCart, setaddcart }) {
               <RiAccountBoxFill />
             </Link>
           </li>
-          <li className="text-2xl hover:text-[#E1380A] transition-all duration-300">
-            <button onClick={() => setaddcart(!addCart)}>
+          <li className="text-2xl hover:text-[#E1380A] transition-all duration-300 ">
+            <button
+              onClick={() => setaddcart(!addCart)}
+              className="cursor-pointer"
+            >
               <FaCartPlus />
             </button>
           </li>

@@ -93,7 +93,7 @@ export default function page() {
           </div>
         </section>
         <section
-          className={`absolute w-[90%] min-h-100 top-32 bg-amber-700 p-5 overflow-hidden ${
+          className={`absolute w-[90%] min-h-100 top-32 bg-[#E1380A] p-5 overflow-hidden ${
             addCart ? "opacity-100 translate-0" : "opacity-0 translate-0 "
           } transition-all duration-300`}
         >
