@@ -3,7 +3,7 @@ import React from "react";
 import { RiAccountBoxFill } from "react-icons/ri";
 import { FaCartPlus } from "react-icons/fa";
 
-export default function Navbar() {
+export default function Navbar({ addCart, setaddcart }) {
   return (
     <>
       <nav className="w-full flex justify-between items-center p-5">
@@ -29,9 +29,9 @@ export default function Navbar() {
             </Link>
           </li>
           <li className="text-2xl hover:text-[#E1380A] transition-all duration-300">
-            <Link href="#">
+            <button onClick={() => setaddcart(!addCart)}>
               <FaCartPlus />
-            </Link>
+            </button>
           </li>
         </ul>
       </nav>

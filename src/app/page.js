@@ -1,13 +1,17 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Link from "next/link";
 import Cards from "./components/Cards";
+import Cart from "./components/Cart";
+import { useState } from "react";
 
 export default function page() {
+  const [addCart, setaddcart] = useState(false);
   return (
     <>
-      <main className="w-full h-screen  p-5">
-        <Navbar />
+      <main className="w-full h-screen overflow-x-hidden  flex flex-col items-center p-5">
+        <Navbar addCart={addCart} setaddcart={setaddcart} />
         <section className="w-full h-full flex bg-linear-to-tl to-black from-gray-800 p-5">
           <div className="w-[50%] h-full  flex flex-col justify-center gap-10">
             <h1 className="text-white">Premium Restaurant</h1>
@@ -87,6 +91,13 @@ export default function page() {
             <Cards />
             <Cards />
           </div>
+        </section>
+        <section
+          className={`absolute w-[90%] min-h-100 top-32 bg-amber-700 p-5 overflow-hidden ${
+            addCart ? "opacity-100 translate-0" : "opacity-0 translate-0 "
+          } transition-all duration-300`}
+        >
+          <Cart />
         </section>
         <footer className="w-full bg-gray-800 flex justify-around items-center p-5">
           <div className="w-80 flex flex-col gap-1">

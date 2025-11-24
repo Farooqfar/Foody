@@ -1,11 +1,15 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
 export default function page() {
+  const pathname = usePathname();
   const [login, setLogin] = useState({
+    name: "",
     email: "",
     password: "",
+    cpassword: "",
   });
   const handlelogin = (e) => {
     let { name, value } = e.target;
@@ -19,12 +23,24 @@ export default function page() {
     <>
       <section className="w-full h-screen flex justify-center items-center flex-col">
         <form
-          className="w-[500px] h-100 bg-gray-800 flex flex-col"
+          className="w-[500px] h-auto bg-gray-800 flex flex-col"
           onSubmit={handleForm}
         >
           <h1 className="text-[#E1380A] text-2xl text-bold text-center p-3 font-bold">
-            Login Foody
+            Register Foody
           </h1>
+          <div className="w-full flex flex-col p-5">
+            <label className="text-gray-400">Name</label>
+            <input
+              type="text"
+              className="border p-1 caret-[#E1380A] text-[#E1380A] outline-none placeholder-[#E1380A]"
+              placeholder="Enter Name"
+              name="name"
+              value={login.name}
+              onChange={(e) => handlelogin(e)}
+            />
+          </div>
+
           <div className="w-full flex flex-col p-5">
             <label className="text-gray-400">Email</label>
             <input
@@ -48,23 +64,34 @@ export default function page() {
             />
           </div>
           <div className="w-full flex flex-col p-5">
+            <label className="text-gray-400">Confirm Password</label>
+            <input
+              type="password"
+              className="border p-1 caret-[#E1380A] text-[#E1380A] outline-none placeholder-[#E1380A]"
+              placeholder="Confirm Password"
+              name="cpassword"
+              value={login.cpassword}
+              onChange={(e) => handlelogin(e)}
+            />
+          </div>
+          <div className="w-full flex flex-col p-5">
             <button
               type="submit"
               className="bg-[#E1380A] p-1 hover:bg-gray-800 border-0 border-[#E1380A] hover:text-[#E1380A] hover:border-[#E1380A] hover:border-2 hover:cursor-pointer transition-all duration-300"
             >
-              Login
+              Register Now
             </button>
             <Link
-              href="/auth/register"
+              href="#"
               className="text-[#E1380A] p-1 hover:text-gray-500 transition-all duration-300"
             >
-              Register
+              {pathname === "/auth/login" ? "register" : "login"}
             </Link>
             <Link
               href="#"
               className="text-[#E1380A] p-1 hover:text-gray-500 transition-all duration-300"
             >
-              Forgot password
+              {pathname === "/auth/register" ? " " : "forgot password"}
             </Link>
           </div>
         </form>
