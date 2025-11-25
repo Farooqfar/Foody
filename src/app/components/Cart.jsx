@@ -21,6 +21,7 @@ export default function Cart() {
                 <div className="flex justify-around items-center gap-5">
                   <Image
                     src="/p2.png"
+                    alt="image"
                     width={100}
                     height={100}
                     className="w-20"

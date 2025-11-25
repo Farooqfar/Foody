@@ -31,6 +31,7 @@ export default function page() {
           <div className="w-[50%] flex justify-center items-center">
             <Image
               src="/pizaa.png"
+              alt="banner"
               width={100}
               height={100}
               className="w-[80%]"
@@ -94,7 +95,9 @@ export default function page() {
         </section>
         <section
           className={`absolute w-[90%] min-h-100 top-32 bg-[#E1380A] p-5 overflow-hidden ${
-            addCart ? "opacity-100 translate-0" : "opacity-0 translate-0 "
+            addCart
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 translate-y-5 pointer-events-none"
           } transition-all duration-300`}
         >
           <Cart />
