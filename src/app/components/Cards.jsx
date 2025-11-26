@@ -1,11 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Cards({ slug }) {
+  const [sale, setSale] = useState(true);
   return (
     <>
-      <section className="w-80 h-80 bg-gray-900 p-5 m-5 rounded">
+      <section className="relative w-80 h-80 bg-gray-900 p-5 m-5 rounded max-md:w-full max-md:m-0">
+        {sale && (
+          <div className="absolute bg-red-600 top-0 right-0 w-10 h-10 rounded-b-2xl text-center">
+            sale
+          </div>
+        )}
+
         <div className="w-full h-44 flex justify-center items-center">
           <Image
             src="/pizza1.png"

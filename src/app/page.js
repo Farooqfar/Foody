@@ -12,10 +12,10 @@ export default function page() {
     <>
       <main className="w-full h-screen overflow-x-hidden  flex flex-col items-center p-5">
         <Navbar addCart={addCart} setaddcart={setaddcart} />
-        <section className="w-full h-full flex bg-linear-to-tl to-black from-gray-800 p-5">
-          <div className="w-[50%] h-full  flex flex-col justify-center gap-10">
+        <section className="w-full  flex bg-linear-to-tl to-black from-gray-800 p-5 max-md:flex-col">
+          <div className="w-[50%] h-full  flex flex-col justify-center gap-10 max-md:w-full">
             <h1 className="text-white">Premium Restaurant</h1>
-            <h1 className="text-white font-bold text-9xl">
+            <h1 className="text-white font-bold text-9xl max-lg:text-7xl max-sm:text-6xl">
               Dedelay&apos;s
               <br />
               Oven
@@ -28,7 +28,7 @@ export default function page() {
               Learn More
             </button>
           </div>
-          <div className="w-[50%] flex justify-center items-center">
+          <div className="w-[50%] h-full flex justify-center items-center max-md:w-full max-md:h-full">
             <Image
               src="/pizaa.png"
               alt="banner"
@@ -38,9 +38,11 @@ export default function page() {
             />
           </div>
         </section>
-        <section className="w-full h-100 bg-gray-800 flex p-5">
-          <div className="w-[50%] h-full flex  flex-col justify-around">
-            <h1 className="text-5xl uppercase font-bold">orange benefit</h1>
+        <section className="w-full  bg-gray-800 flex p-5 max-md:flex-col max-md:h-auto max-md:gap-10">
+          <div className="w-[50%] h-full flex  flex-col justify-around max-md:w-full max-md:h-full max-md:gap-1">
+            <h1 className="text-5xl uppercase font-bold max-lg:text-4xl max-sm:text-2xl">
+              orange benefit
+            </h1>
             <div className="flex gap-8">
               <div>
                 <Image
@@ -62,13 +64,13 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="w-[50%] h-full flex justify-center items-center">
+          <div className="w-[50%] h-full flex justify-center items-center max-md:w-full max-md:h-full">
             <Image
               src="/p2.png"
               alt="orange"
               width={100}
               height={100}
-              className="w-100"
+              className="w-100 max-md:w-52"
             />
           </div>
         </section>
@@ -102,7 +104,7 @@ export default function page() {
         >
           <Cart />
         </section>
-        <footer className="w-full bg-gray-800 flex justify-around items-center p-5">
+        <footer className="w-full bg-gray-800 flex justify-around items-center p-5 max-md:flex-col max-md:items-start max-md:justify-normal max-md:gap-2">
           <div className="w-80 flex flex-col gap-1">
             <h1 className="text-[#E1380A]">Dedelay's Oven</h1>
             <p className="text-md text-gray-500">
