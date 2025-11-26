@@ -18,7 +18,7 @@ export default function Navbar({ addCart, setaddcart }) {
 
         <div
           className={`flex justify-between items-center w-[65%] max-md:flex-col max-md:h-screen ${
-            menu ? "block" : "hidden"
+            menu ? "max-md:block" : "max-md:hidden"
           }`}
         >
           <ul className="flex justify-center items-center gap-10 max-md:h-full max-md:flex-col">
@@ -52,7 +52,7 @@ export default function Navbar({ addCart, setaddcart }) {
           </ul>
         </div>
         <button
-          className="absolute top-2 right-2 text-4xl"
+          className="absolute top-2 right-2 text-4xl hidden max-md:block"
           onClick={() => setMenu(!menu)}
         >
           {menu ? <MdRestaurantMenu /> : <CiMenuFries />}

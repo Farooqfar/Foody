@@ -23,7 +23,7 @@ export default function page() {
     <>
       <section className="w-full h-screen flex justify-center items-center flex-col">
         <form
-          className="w-[500px] h-auto bg-gray-800 flex flex-col"
+          className="w-[500px] h-auto bg-gray-800 flex flex-col max-md:w-full"
           onSubmit={handleForm}
         >
           <h1 className="text-[#E1380A] text-2xl text-bold text-center p-3 font-bold">
@@ -82,7 +82,7 @@ export default function page() {
               Register Now
             </button>
             <Link
-              href="#"
+              href="/auth/login"
               className="text-[#E1380A] p-1 hover:text-gray-500 transition-all duration-300"
             >
               {pathname === "/auth/login" ? "register" : "login"}

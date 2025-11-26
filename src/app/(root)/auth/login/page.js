@@ -19,7 +19,7 @@ export default function page() {
     <>
       <section className="w-full h-screen flex justify-center items-center flex-col">
         <form
-          className="w-[500px] h-100 bg-gray-800 flex flex-col"
+          className="w-[500px] h-100 bg-gray-800 flex flex-col max-md:w-full"
           onSubmit={handleForm}
         >
           <h1 className="text-[#E1380A] text-2xl text-bold text-center p-3 font-bold">
