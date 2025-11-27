@@ -34,7 +34,7 @@ export default function Cards({ slug }) {
             Add to cart
           </Link>
           <Link
-            href={`auth/order/${slug}`}
+            href={`user/order/${slug}`}
             className="block w-full text-center rounded p-1 bg-[#E1380A] hover:bg-red-700 transition-all duration-300 ease-out mt-3"
           >
             Order Now

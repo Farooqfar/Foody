@@ -23,13 +23,13 @@ export default function Navbar({ addCart, setaddcart }) {
         >
           <ul className="flex justify-center items-center gap-10 max-md:h-full max-md:flex-col">
             <li className="relative text-md uppercase hover:text-[#E1380A] before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-[#E1380A] before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
-              <Link href="#">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li className="relative text-md uppercase hover:text-[#E1380A] before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-[#E1380A] before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
-              <Link href="#">Offers</Link>
+              <Link href="/user/offer">Offers</Link>
             </li>
             <li className="relative text-md uppercase hover:text-[#E1380A] before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-[#E1380A] before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
-              <Link href="#">regular</Link>
+              <Link href="/user/regular">regular</Link>
             </li>
             <li className="relative text-md uppercase hover:text-[#E1380A] before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-[#E1380A] before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
               <Link href="#">contactus</Link>

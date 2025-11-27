@@ -12,7 +12,7 @@ export default function page() {
     <>
       <main className="w-full h-screen overflow-x-hidden  flex flex-col items-center p-5">
         <Navbar addCart={addCart} setaddcart={setaddcart} />
-        <section className="w-full  flex bg-linear-to-tl to-black from-gray-800 p-5 max-md:flex-col">
+        <section className="w-full  flex bg-linear-to-tl to-black from-gray-800 p-5 max-md:flex-col max-md:gap-10">
           <div className="w-[50%] h-full  flex flex-col justify-center gap-10 max-md:w-full">
             <h1 className="text-white">Premium Restaurant</h1>
             <h1 className="text-white font-bold text-9xl max-lg:text-7xl max-sm:text-6xl">
