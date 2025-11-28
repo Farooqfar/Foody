@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import { RiAccountBoxFill } from "react-icons/ri";
@@ -32,7 +33,7 @@ export default function Navbar({ addCart, setaddcart }) {
               <Link href="/user/regular">regular</Link>
             </li>
             <li className="relative text-md uppercase hover:text-[#E1380A] before:absolute before:content-[''] before:w-0 before:h-0.5 before:bottom-0 before:bg-[#E1380A] before:left-0 hover:before:w-full before:transition-all  transition-all duration-300">
-              <Link href="#">contactus</Link>
+              <Link href="/user/contactus">contactus</Link>
             </li>
           </ul>
           <ul className="flex gap-2">
