@@ -27,7 +27,9 @@ export default function page() {
             />
           </div>
           <div>
-            <button className="bg-amber-600 w-28 p-1">Login</button>
+            <button className="bg-amber-600 w-28 p-1 cursor-pointer">
+              Login
+            </button>
           </div>
         </form>
       </section>
