@@ -8,7 +8,9 @@ export default function page() {
       <Admin_Nav />
       <section className="w-full h-full">
         <div className="w-full flex justify-end items-center p-8">
-          <button className="w-20 bg-amber-600">Add + </button>
+          <Link href="addProduct" className="w-20 bg-amber-600">
+            Add +
+          </Link>
         </div>
         <div className="w-full flex justify-center items-center p-10">
           <table class="w-full border-separate border-spacing-y-2">
