@@ -9,19 +9,22 @@ export default function page() {
     sale: false,
   });
   const handleValue = (e) => {
-    const { name, value } = e.target;
-    setEdit((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setEdit((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   };
   const handleForm = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     console.log(edit);
   };
   return (
     <>
       <section className="w-full h-screen flex justify-center items-center">
-        <from
-          className="w-90 flex flex-col gap-2 border p-4 rounded max-md:w-full"
+        <form
           onSubmit={handleForm}
+          className="w-90 flex flex-col gap-2 border p-4 rounded max-md:w-full"
         >
           <div>
             <h1>Name</h1>
@@ -57,15 +60,15 @@ export default function page() {
             />
           </div>
           <div>
-            <label class="inline-flex items-center gap-2 cursor-pointer">
+            <label className="inline-flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
-                class="w-5 h-5 accent-amber-500"
+                className="w-5 h-5 accent-amber-500"
                 name="sale"
                 value={edit.sale}
                 onChange={handleValue}
               />
-              <span class="text-gray-700">Sale</span>
+              <span className="text-gray-700">Sale</span>
             </label>
           </div>
           <div>
@@ -73,7 +76,7 @@ export default function page() {
               Edit
             </button>
           </div>
-        </from>
+        </form>
       </section>
     </>
   );
