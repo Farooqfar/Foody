@@ -73,7 +73,7 @@ export default function page() {
           </div>
           <div>
             <button className="bg-amber-600 w-full hover:cursor-pointer">
-              Add
+              Edit
             </button>
           </div>
         </form>

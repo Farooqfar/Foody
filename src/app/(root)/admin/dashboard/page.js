@@ -36,7 +36,7 @@ export default function page() {
                 </td>
                 <td className="p-2">
                   <Link
-                    href="#"
+                    href="editProduct"
                     className="cursor-pointer text-blue-600 underline"
                   >
                     edit
