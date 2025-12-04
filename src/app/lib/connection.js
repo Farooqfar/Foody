@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const db_link = process.env.MONGODB_URL;
 
-const cached = global.mongoose;
+let cached = global.mongoose;
 if (!cached) {
   cached = global.mongoose = {
     conn: null,
