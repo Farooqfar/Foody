@@ -40,6 +40,7 @@ registerSchema.pre("save", async function (next) {
     next(error);
   }
 });
+
 registerSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
@@ -47,5 +48,3 @@ registerSchema.methods.comparePassword = async function (password) {
 const Register =
   mongoose.models.registerUser ||
   mongoose.model("registerUser", registerSchema);
-
-export default Register;
