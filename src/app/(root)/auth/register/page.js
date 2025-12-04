@@ -1,4 +1,5 @@
 "use client";
+import axios from "axios";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -15,8 +16,9 @@ export default function page() {
     let { name, value } = e.target;
     setLogin((prev) => ({ ...prev, [name]: value }));
   };
-  const handleForm = (e) => {
+  const handleForm = async(e) => {
     e.preventDefault();
+    let data = await axios.post('')
     console.log(login);
   };
   return (
