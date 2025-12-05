@@ -31,20 +31,16 @@ const registerSchema = mongoose.Schema(
   }
 );
 
-registerSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) return next();
-  try {
-    this.password = await bcrypt.hash(this.password, 10);
-    next();
-  } catch (error) {
-    next(error);
-  }
+registerSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
+  this.password = await bcrypt.hash(this.password, 10);
 });
 
 registerSchema.methods.comparePassword = async function (password) {
   return await bcrypt.compare(password, this.password);
 };
 
-const Register =
+const register =
   mongoose.models.registerUser ||
   mongoose.model("registerUser", registerSchema);
+export default register;
