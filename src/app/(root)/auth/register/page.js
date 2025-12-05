@@ -1,4 +1,5 @@
 "use client";
+import { api } from "@/app/lib/axios";
 import axios from "axios";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -16,9 +17,9 @@ export default function page() {
     let { name, value } = e.target;
     setLogin((prev) => ({ ...prev, [name]: value }));
   };
-  const handleForm = async(e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
-    let data = await axios.post('')
+    let data = await api.post("/register", login);
     console.log(login);
   };
   return (

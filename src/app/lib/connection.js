@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 
 const db_link = process.env.MONGODB_URL;
-
+if (!db_link) {
+  throw new Error("database link not found");
+}
 let cached = global.mongoose;
 if (!cached) {
   cached = global.mongoose = {
@@ -22,7 +24,6 @@ export const connect_db = async () => {
         return mongoose.connection;
       })
       .catch((error) => {
-        cached.promise = null;
         throw error;
       });
   }
