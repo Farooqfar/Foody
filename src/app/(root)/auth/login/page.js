@@ -1,4 +1,5 @@
 "use client";
+import { api } from "@/app/lib/axios";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -11,9 +12,13 @@ export default function page() {
     let { name, value } = e.target;
     setLogin((prev) => ({ ...prev, [name]: value }));
   };
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
-    console.log(login);
+    try {
+      const data = await api.post("/login", login);
+    } catch (error) {
+      alert(error);
+    }
   };
   return (
     <>

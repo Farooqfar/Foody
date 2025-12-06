@@ -30,7 +30,7 @@ export async function POST(request) {
     await new_user.save();
 
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-    const token = await SignJWT({
+    const token = await new SignJWT({
       id: new_user._id.toString(),
       email: new_user.email,
     })
