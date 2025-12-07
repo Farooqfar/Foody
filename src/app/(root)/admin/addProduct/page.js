@@ -1,4 +1,5 @@
 "use client";
+import { api } from "@/app/lib/axios";
 import React, { useState } from "react";
 
 export default function page() {
@@ -10,15 +11,22 @@ export default function page() {
     sale: false,
   });
   const handleValue = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value, type, checked, files } = e.target;
     setEdit((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]:
+        type === "checkbox" ? checked : type === "file" ? files[0] : value,
     }));
   };
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
-    console.log(edit);
+    const formData = new FormData();
+    formData.append("name", edit.name);
+    formData.append("description", edit.description);
+    formData.append("price", edit.price);
+    formData.append("image", edit.image);
+    formData.append("sale", edit.sale);
+    const res = await api("/addProduct", formData);
   };
   return (
     <>
