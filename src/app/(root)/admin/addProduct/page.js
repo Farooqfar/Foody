@@ -6,6 +6,7 @@ export default function page() {
     name: "",
     description: "",
     price: "",
+    image: "",
     sale: false,
   });
   const handleValue = (e) => {
@@ -70,6 +71,9 @@ export default function page() {
               />
               <span className="text-gray-600">Sale</span>
             </label>
+          </div>
+          <div>
+            <input type="file" name="file" />
           </div>
           <div>
             <button className="bg-amber-600 w-full hover:cursor-pointer">
