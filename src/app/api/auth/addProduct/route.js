@@ -9,12 +9,23 @@ export async function POST(req) {
   const sale = formdata.get("sale");
   const file = formdata.get("image");
 
+  if (!file.type.startWith("image")) {
+    return NextResponse({
+      success: false,
+      message: "Only Images you can uploaded",
+    });
+  }
+
   const array_buffer = await file.arrayBuffer();
   const buffer = Buffer.from(array_buffer);
   const base64 = buffer.toString("base64");
 
   const upload_clodnary = await cloudinary.uploader.upload(
-    `data:${file.type} ; base64  , ${base64}`
+    `data:${file.type} ; base64  , ${base64}`,
+    {
+      folder: "",
+      resource_type: "image",
+    }
   );
 
   return NextResponse.json({
