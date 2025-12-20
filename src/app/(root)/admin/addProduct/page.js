@@ -26,7 +26,7 @@ export default function page() {
     formData.append("price", edit.price);
     formData.append("image", edit.image);
     formData.append("sale", edit.sale);
-    const res = await api("/addProduct", formData);
+    const res = await api.post("/addProduct", formData);
   };
   return (
     <>
@@ -74,14 +74,14 @@ export default function page() {
                 type="checkbox"
                 className="w-4 h-4 accent-amber-500"
                 name="sale"
-                value={edit.sale}
+                checked={edit.sale}
                 onChange={handleValue}
               />
               <span className="text-gray-600">Sale</span>
             </label>
           </div>
           <div>
-            <input type="file" name="file" />
+            <input type="file" name="image" onChange={handleValue} />
           </div>
           <div>
             <button className="bg-amber-600 w-full hover:cursor-pointer">
