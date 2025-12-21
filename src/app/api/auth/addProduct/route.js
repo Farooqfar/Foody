@@ -9,11 +9,23 @@ export async function POST(req) {
   const sale = formdata.get("sale");
   const file = formdata.get("image");
 
-  if (!file.type.startWith("image")) {
-    return NextResponse({
-      success: false,
-      message: "Only Images you can uploaded",
+  if (!file) {
+    return NextResponse.json({
+      status: 400,
+      message: "Image must be uploaded",
     });
+  }
+
+  if (!file.type.startsWith("image/")) {
+    return NextResponse.json(
+      {
+        success: false,
+        message: "Only Images you can uploaded",
+      },
+      {
+        status: 400,
+      }
+    );
   }
 
   const array_buffer = await file.arrayBuffer();
@@ -21,12 +33,15 @@ export async function POST(req) {
   const base64 = buffer.toString("base64");
 
   const upload_clodnary = await cloudinary.uploader.upload(
-    `data:${file.type} ; base64  , ${base64}`,
+    `data:${file.type};base64,${base64}`,
     {
       folder: "",
       resource_type: "image",
     }
   );
+  console.log(`upload`);
+  console.log(upload_clodnary);
+  console.log(`uploaded`);
 
   return NextResponse.json({
     success: true,
