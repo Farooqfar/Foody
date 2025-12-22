@@ -1,8 +1,19 @@
+"use client";
 import Admin_Nav from "@/app/components/Admin_Nav";
+import { api } from "@/app/lib/axios";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function page() {
+  const [products, setProdcuts] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let data = await api.get("/addProduct");
+      setProdcuts(data.data.allproduct);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <Admin_Nav />
@@ -26,106 +37,30 @@ export default function page() {
               </tr>
             </thead>
             <tbody className="mt-2">
-              <tr className="odd:bg-gray-800 text-center">
-                <td className="p-2">1</td>
-                <td className="p-2">Pizza</td>
-                <td className="p-2">1000</td>
-                <td className="p-2">sale</td>
-                <td className="p-2">
-                  <button>deactive</button>
-                </td>
-                <td className="p-2">
-                  <Link
-                    href="editProduct"
-                    className="cursor-pointer text-blue-600 underline"
-                  >
-                    edit
-                  </Link>
-                </td>
-                <td className="p-2 text-red-600 underline">
-                  <Link href="#">delete</Link>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-800 text-center">
-                <td className="p-2">1</td>
-                <td className="p-2">Pizza</td>
-                <td className="p-2">1000</td>
-                <td className="p-2">sale</td>
-                <td className="p-2">
-                  <button>deactive</button>
-                </td>
-                <td className="p-2">
-                  <Link
-                    href="#"
-                    className="cursor-pointer text-blue-600 underline"
-                  >
-                    edit
-                  </Link>
-                </td>
-                <td className="p-2 text-red-600 underline">
-                  <Link href="#">delete</Link>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-800 text-center">
-                <td className="p-2">1</td>
-                <td className="p-2">Pizza</td>
-                <td className="p-2">1000</td>
-                <td className="p-2">sale</td>
-                <td className="p-2">
-                  <button>deactive</button>
-                </td>
-                <td className="p-2">
-                  <Link
-                    href="#"
-                    className="cursor-pointer text-blue-600 underline"
-                  >
-                    edit
-                  </Link>
-                </td>
-                <td className="p-2 text-red-600 underline">
-                  <Link href="#">delete</Link>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-800 text-center">
-                <td className="p-2">1</td>
-                <td className="p-2">Pizza</td>
-                <td className="p-2">1000</td>
-                <td className="p-2">sale</td>
-                <td className="p-2">
-                  <button>deactive</button>
-                </td>
-                <td className="p-2">
-                  <Link
-                    href="#"
-                    className="cursor-pointer text-blue-600 underline"
-                  >
-                    edit
-                  </Link>
-                </td>
-                <td className="p-2 text-red-600 underline">
-                  <Link href="#">delete</Link>
-                </td>
-              </tr>
-              <tr className="odd:bg-gray-800 text-center">
-                <td className="p-2">1</td>
-                <td className="p-2">Pizza</td>
-                <td className="p-2">1000</td>
-                <td className="p-2">sale</td>
-                <td className="p-2">
-                  <button>deactive</button>
-                </td>
-                <td className="p-2">
-                  <Link
-                    href="#"
-                    className="cursor-pointer text-blue-600 underline"
-                  >
-                    edit
-                  </Link>
-                </td>
-                <td className="p-2 text-red-600 underline">
-                  <Link href="#">delete</Link>
-                </td>
-              </tr>
+              {products.map((items) => {
+                return (
+                  <tr className="odd:bg-gray-800 text-center">
+                    <td className="p-2">1</td>
+                    <td className="p-2">{items.name}</td>
+                    <td className="p-2">{items.price}</td>
+                    <td className="p-2">{items.sale ? "sale" : "regular"}</td>
+                    <td className="p-2">
+                      <button>deactive</button>
+                    </td>
+                    <td className="p-2">
+                      <Link
+                        href="editProduct"
+                        className="cursor-pointer text-blue-600 underline"
+                      >
+                        edit
+                      </Link>
+                    </td>
+                    <td className="p-2 text-red-600 underline">
+                      <Link href="#">delete</Link>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

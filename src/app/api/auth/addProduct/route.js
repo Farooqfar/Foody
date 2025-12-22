@@ -65,3 +65,12 @@ export async function POST(req) {
     message: "add product successfully",
   });
 }
+
+export async function GET() {
+  connect_db();
+  const all_products = await addProduct.find();
+  return NextResponse.json({
+    status: 201,
+    allproduct: all_products,
+  });
+}

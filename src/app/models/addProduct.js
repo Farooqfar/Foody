@@ -20,5 +20,5 @@ const productSchema = mongoose.Schema({
 });
 
 const addProduct =
-  mongoose.models.addProducts || mongoose.model("addproduct", productSchema);
+  mongoose.models.addproducts || mongoose.model("addproducts", productSchema);
 export default addProduct;
