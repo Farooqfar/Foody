@@ -1,7 +1,10 @@
 import cloudinary from "@/app/lib/cloudinary";
+import { connect_db } from "@/app/lib/connection";
+import addProduct from "@/app/models/addProduct";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
+  connect_db();
   const formdata = await req.formData();
   const name = formdata.get("name");
   const description = formdata.get("description");
@@ -13,6 +16,13 @@ export async function POST(req) {
     return NextResponse.json({
       status: 400,
       message: "Image must be uploaded",
+    });
+  }
+
+  if (file.size > 1 * 1024 * 1024) {
+    return NextResponse.json({
+      status: 409,
+      message: "file size must be less than 1MB ",
     });
   }
 
@@ -39,9 +49,16 @@ export async function POST(req) {
       resource_type: "image",
     }
   );
-  console.log(`upload`);
-  console.log(upload_clodnary);
-  console.log(`uploaded`);
+
+  const add_products = await addProduct.create({
+    name,
+    description,
+    price,
+    sale,
+    image: upload_clodnary.secure_url,
+  });
+
+  console.log(add_products);
 
   return NextResponse.json({
     success: true,
