@@ -14,10 +14,11 @@ export default function page() {
     fetchProducts();
   }, []);
 
-  const handleDelete = async (value) => {
-    const val = value;
-    const delete_post = await api.delete("/addProduct", { data: { val } });
+  const handleDelete = async (id) => {
+    const delete_post = await api.delete("/addProduct", { data: { id } });
     console.log(delete_post);
+
+    setProdcuts((prev) => prev.filter((product) => product._id !== id));
   };
 
   return (
@@ -30,7 +31,7 @@ export default function page() {
           </Link>
         </div>
         <div className="w-full flex justify-center items-center p-10">
-          <table class="w-full border-separate border-spacing-y-2">
+          <table className="w-full border-separate border-spacing-y-2">
             <thead>
               <tr className="bg-amber-600">
                 <th>No</th>

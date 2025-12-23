@@ -75,11 +75,11 @@ export async function GET() {
   });
 }
 
-export async function DELETE(req) {
+export async function DELETE(res) {
   connect_db();
-  let { id } = await req.json();
+  let { id } = await res.json();
   console.log(id);
-  const delete_product = await addProduct.findByIdAndDelete(id);
+  const delete_product = await addProduct.findByIdAndDelete({ _id: id });
   console.log(delete_product);
   return NextResponse.json({
     status: 200,
