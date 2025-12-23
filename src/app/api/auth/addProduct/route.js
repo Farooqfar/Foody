@@ -74,3 +74,15 @@ export async function GET() {
     allproduct: all_products,
   });
 }
+
+export async function DELETE(req) {
+  connect_db();
+  let { id } = await req.json();
+  console.log(id);
+  const delete_product = await addProduct.findByIdAndDelete(id);
+  console.log(delete_product);
+  return NextResponse.json({
+    status: 200,
+    message: "Deleted",
+  });
+}

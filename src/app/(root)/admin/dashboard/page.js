@@ -14,6 +14,12 @@ export default function page() {
     fetchProducts();
   }, []);
 
+  const handleDelete = async (value) => {
+    const val = value;
+    const delete_post = await api.delete("/addProduct", { data: { val } });
+    console.log(delete_post);
+  };
+
   return (
     <>
       <Admin_Nav />
@@ -37,9 +43,9 @@ export default function page() {
               </tr>
             </thead>
             <tbody className="mt-2">
-              {products.map((items) => {
+              {products.map((items, index) => {
                 return (
-                  <tr className="odd:bg-gray-800 text-center">
+                  <tr className="odd:bg-gray-800 text-center" key={index}>
                     <td className="p-2">1</td>
                     <td className="p-2">{items.name}</td>
                     <td className="p-2">{items.price}</td>
@@ -56,7 +62,12 @@ export default function page() {
                       </Link>
                     </td>
                     <td className="p-2 text-red-600 underline">
-                      <Link href="#">delete</Link>
+                      <button
+                        className="text-black  bg-red-600 text-sm p-1 rounded hover:scale-90 transition-all duration-200 hover:cursor-pointer"
+                        onClick={() => handleDelete(items._id)}
+                      >
+                        Delete
+                      </button>
                     </td>
                   </tr>
                 );
