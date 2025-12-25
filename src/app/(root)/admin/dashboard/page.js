@@ -15,10 +15,14 @@ export default function page() {
   }, []);
 
   const handleDelete = async (id) => {
-    const delete_post = await api.delete("/addProduct", { data: { id } });
-    console.log(delete_post);
-
-    setProdcuts((prev) => prev.filter((product) => product._id !== id));
+    try {
+      let delete_products = await api.delete("/addProduct", {
+        data: { id },
+      });
+      console.log(delete_products);
+    } catch (error) {
+      return error;
+    }
   };
 
   return (

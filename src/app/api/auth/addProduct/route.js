@@ -75,14 +75,15 @@ export async function GET() {
   });
 }
 
-export async function DELETE(res) {
-  connect_db();
-  let { id } = await res.json();
-  console.log(id);
-  const delete_product = await addProduct.findByIdAndDelete({ _id: id });
+export async function DELETE(req) {
+  let { id } = await req.json();
+  let delete_product = await addProduct.findByIdAndDelete({ _id: id });
   console.log(delete_product);
+  console.log("id");
+  console.log(id);
   return NextResponse.json({
     status: 200,
-    message: "Deleted",
+    message: "deleted successfully",
+    data: id,
   });
 }
