@@ -19,7 +19,8 @@ export default function page() {
       let delete_products = await api.delete("/addProduct", {
         data: { id },
       });
-      console.log(delete_products);
+
+      setProdcuts((prev) => prev.filter((prev) => prev._id !== id));
     } catch (error) {
       return error;
     }
