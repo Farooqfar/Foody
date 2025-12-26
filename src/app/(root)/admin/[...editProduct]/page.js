@@ -1,8 +1,11 @@
 "use client";
+import { useParams, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 export default function page() {
-  
+  const params = useSearchParams();
+  const id = params.get("id");
+  console.log(id);
   const [edit, setEdit] = useState({
     name: "",
     description: "",

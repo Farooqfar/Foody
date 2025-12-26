@@ -49,7 +49,7 @@ export default function page() {
               </tr>
             </thead>
             <tbody className="mt-2">
-              {products.map((items, index) => {
+              {products?.map((items, index) => {
                 return (
                   <tr className="odd:bg-gray-800 text-center" key={index}>
                     <td className="p-2">1</td>
@@ -61,7 +61,7 @@ export default function page() {
                     </td>
                     <td className="p-2">
                       <Link
-                        href="editProduct"
+                        href={`edit/?id=${items}`}
                         className="cursor-pointer text-blue-600 underline"
                       >
                         edit
